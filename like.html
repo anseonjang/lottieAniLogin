@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Like Button with Lottie Animation</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
     <style>
-        #like-button {            
+        #wrap {
+            position: relative;
+            height: 100vh;
+            display: flex;justify-content: center;align-items: center;
+        }
+        #wrap #like-button {
+            font-weight: bold;
             color: #000;
             border: none;
             padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            position: relative; /* 상대 위치로 설정 */
+            font-size: 20px;         
+            position: relative;
+            text-decoration: none;
+            color: #000;
+            /* 상대 위치로 설정 */
         }
 
-        #animation {
-            width: 100px; /* 애니메이션 크기 조정 */
-            height: 100px; /* 애니메이션 크기 조정 */
-            margin-left: 10px; /* 버튼과의 간격 */
-            display: none; /* 클릭 시에만 보이도록 설정 */
-            position: absolute; /* 절대 위치로 설정 */
-            top: 50%; /* 버튼의 세로 중앙에 맞춤 */
-            transform: translateY(-50%); /* 세로 중앙 정렬 */
+        #wrap #animation {
+            width: 500px;
+            /* 애니메이션 크기 조정 */
+            height: 500px;
+            /* 애니메이션 크기 조정 */
+            margin-left: 10px;
+            /* 버튼과의 간격 */
+            display: none;
+            /* 클릭 시에만 보이도록 설정 */
+            position: absolute;
+            /* 절대 위치로 설정 */
+            top: 50%;
+            /* 버튼의 세로 중앙에 맞춤 */
+            transform: translateY(-50%);
+            /* 세로 중앙 정렬 */
         }
     </style>
 </head>
-<body>
-    <button id="like-button">좋아요</button>
-    <div id="animation"></div>
 
+<body>
+    <div id="wrap">
+        <a href="#" id="like-button">좋아요</button>
+        <div id="animation"></div>
+    </div>
     <script>
         // Lottie 애니메이션 로드 (로컬에서 like.json 사용)
         var animation = lottie.loadAnimation({
@@ -41,10 +59,11 @@
         });
 
         // 버튼 클릭 이벤트
-        document.getElementById('like-button').addEventListener('click', function() {
+        document.getElementById('like-button').addEventListener('click', function () {
             document.getElementById('animation').style.display = 'block'; // 애니메이션 보이기
             animation.goToAndPlay(0, true); // 애니메이션을 처음부터 재생
         });
     </script>
 </body>
+
 </html>
