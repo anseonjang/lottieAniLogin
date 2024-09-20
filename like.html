@@ -7,17 +7,28 @@
     <title>Like Button with Lottie Animation</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         #wrap {
+            border: 1px solid red;
+            width: 200px;
+            margin: 0 auto;
             position: relative;
             height: 100vh;
-            display: flex;justify-content: center;align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
         #wrap #like-button {
             font-weight: bold;
             color: #000;
             border: none;
             padding: 10px 20px;
-            font-size: 20px;         
+            font-size: 20px;
             position: relative;
             text-decoration: none;
             color: #000;
@@ -36,6 +47,8 @@
             position: absolute;
             /* 절대 위치로 설정 */
             top: 50%;
+            right: 0;
+
             /* 버튼의 세로 중앙에 맞춤 */
             transform: translateY(-50%);
             /* 세로 중앙 정렬 */
@@ -46,7 +59,7 @@
 <body>
     <div id="wrap">
         <a href="#" id="like-button">좋아요</button>
-        <div id="animation"></div>
+            <div id="animation"></div>
     </div>
     <script>
         // Lottie 애니메이션 로드 (로컬에서 like.json 사용)
