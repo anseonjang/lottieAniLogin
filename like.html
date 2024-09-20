@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Like Button with Lottie Animation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+    <style>
+        #like-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #animation {
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="like-button">👍 Like</button>
+    <div id="animation"></div>
+
+    <script>
+        // Lottie 애니메이션 로드 (로컬에서 like.json 사용)
+        var animation = lottie.loadAnimation({
+            container: document.getElementById('animation'), // 애니메이션을 표시할 DOM 요소
+            renderer: 'svg', // 렌더링 방식 (svg, canvas, html)
+            loop: false, // 애니메이션 반복 여부
+            autoplay: false, // 자동 재생 여부
+            path: './src/like.json' // 로컬에서 애니메이션 JSON 파일 경로
+        });
+
+        // 버튼 클릭 이벤트
+        document.getElementById('like-button').addEventListener('click', function() {
+            animation.goToAndPlay(0, true); // 애니메이션을 처음부터 재생
+        });
+    </script>
+
+</body>
+</html>
