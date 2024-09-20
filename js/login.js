@@ -1,6 +1,6 @@
 // 로티 파일 경로
-// const animationPath = './src/login.json';
-const animationPath = './src/star.json';
+const animationPath = './src/login.json';
+// const animationPath = './src/star.json';
 
 // 애니메이션 DIV ID
 const ani = document.getElementById('lottie-animation');
