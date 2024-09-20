@@ -7,8 +7,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
     <style>
         #like-button {
-            background-color: #28a745;
-            color: white;
+            
+            color: #000;
             border: none;
             padding: 10px 20px;
             font-size: 16px;
@@ -16,15 +16,16 @@
         }
 
         #animation {
-            width: 200px;
-            height: 200px;
+            width: 300px; /* 애니메이션 크기 조정 */
+            height: 300px; /* 애니메이션 크기 조정 */
             margin-top: 20px;
+            display: none; /* 클릭 시에만 보이도록 설정 */
         }
     </style>
 </head>
 <body>
 
-    <button id="like-button">👍 Like</button>
+    <button id="like-button">좋아요</button>
     <div id="animation"></div>
 
     <script>
@@ -39,6 +40,7 @@
 
         // 버튼 클릭 이벤트
         document.getElementById('like-button').addEventListener('click', function() {
+            document.getElementById('animation').style.display = 'block'; // 애니메이션 보이기
             animation.goToAndPlay(0, true); // 애니메이션을 처음부터 재생
         });
     </script>
